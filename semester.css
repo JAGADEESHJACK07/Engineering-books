@@ -1,0 +1,358 @@
+/* Semester Specific Styles */
+
+/* Semester Filters */
+.semester-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.filter-btn {
+    padding: 10px 20px;
+    border: 2px solid var(--primary);
+    background: transparent;
+    color: var(--primary);
+    border-radius: 25px;
+    cursor: pointer;
+    transition: var(--transition);
+    font-weight: 500;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    background: var(--primary);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(67, 97, 238, 0.3);
+}
+
+/* Semester Grid */
+.semester-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+.semester-card {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    cursor: pointer;
+    position: relative;
+}
+
+.semester-card:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: var(--shadow-lg);
+}
+
+.semester-header {
+    padding: 25px;
+    color: white;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.semester-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 100%);
+}
+
+.semester-number {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 5px;
+    position: relative;
+    z-index: 2;
+}
+
+.semester-title {
+    font-size: 1.2rem;
+    font-weight: 500;
+    position: relative;
+    z-index: 2;
+}
+
+.semester-content {
+    padding: 20px;
+}
+
+.semester-stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.semester-stat {
+    text-align: center;
+}
+
+.semester-stat-value {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--primary);
+    margin-bottom: 5px;
+}
+
+.semester-stat-label {
+    font-size: 0.8rem;
+    color: var(--gray);
+}
+
+.semester-subjects {
+    margin-bottom: 20px;
+}
+
+.semester-subjects h4 {
+    margin-bottom: 10px;
+    color: var(--dark);
+    font-size: 0.9rem;
+}
+
+.subject-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.subject-tag {
+    background: rgba(67, 97, 238, 0.1);
+    color: var(--primary);
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 0.7rem;
+    font-weight: 500;
+}
+
+.semester-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.semester-actions .btn {
+    flex: 1;
+    justify-content: center;
+    padding: 8px 15px;
+    font-size: 0.9rem;
+}
+
+/* Semester Modal */
+.semester-modal-content {
+    max-width: 1000px;
+}
+
+.semester-detail-content {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 30px;
+}
+
+.semester-sidebar {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.semester-info-card {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.semester-big-number {
+    font-size: 4rem;
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: 10px;
+}
+
+.semester-big-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.semester-duration {
+    color: var(--gray);
+    font-size: 0.9rem;
+}
+
+.semester-detail-stats {
+    display: grid;
+    gap: 15px;
+}
+
+.detail-stat {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.detail-stat:last-child {
+    border-bottom: none;
+}
+
+.detail-stat-label {
+    color: var(--gray);
+    font-size: 0.9rem;
+}
+
+.detail-stat-value {
+    font-weight: 600;
+    color: var(--primary);
+}
+
+.semester-main-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.semester-tabs {
+    display: flex;
+    border-bottom: 1px solid #e9ecef;
+    margin-bottom: 20px;
+}
+
+.semester-tab {
+    padding: 10px 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-weight: 500;
+    color: var(--gray);
+    border-bottom: 2px solid transparent;
+    transition: var(--transition);
+}
+
+.semester-tab.active {
+    color: var(--primary);
+    border-bottom-color: var(--primary);
+}
+
+.semester-tab-content {
+    display: none;
+}
+
+.semester-tab-content.active {
+    display: block;
+}
+
+.subject-detail-grid {
+    display: grid;
+    gap: 15px;
+}
+
+.subject-detail-card {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+    transition: var(--transition);
+}
+
+.subject-detail-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.subject-detail-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 15px;
+}
+
+.subject-detail-name {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--dark);
+}
+
+.subject-detail-code {
+    color: var(--gray);
+    font-size: 0.8rem;
+}
+
+.subject-detail-credits {
+    background: var(--primary);
+    color: white;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.subject-detail-resources {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.resource-count {
+    text-align: center;
+    padding: 10px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    transition: var(--transition);
+    cursor: pointer;
+}
+
+.resource-count:hover {
+    background: rgba(67, 97, 238, 0.1);
+}
+
+.resource-count i {
+    font-size: 1.2rem;
+    color: var(--primary);
+    margin-bottom: 5px;
+}
+
+.resource-count-value {
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-bottom: 2px;
+}
+
+.resource-count-label {
+    font-size: 0.7rem;
+    color: var(--gray);
+}
+
+/* Responsive Semester Styles */
+@media (max-width: 768px) {
+    .semester-detail-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .semester-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .subject-detail-resources {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .semester-filters {
+        overflow-x: auto;
+        justify-content: flex-start;
+        padding-bottom: 10px;
+    }
+    
+    .filter-btn {
+        white-space: nowrap;
+    }
+}

@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Data Management acs- 8 Semester System</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/semester.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="animated-bg">
+        <div class="floating-shape shape-1"></div>
+        <div class="floating-shape shape-2"></div>
+        <div class="floating-shape shape-3"></div>
+        <div class="floating-shape shape-4"></div>
+        <div class="particles-container" id="particles"></div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-graduation-cap"></i>
+                <span>sri balaji chockalingam engineering college</span>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="#dashboard" class="nav-link active">Dashboard</a></li>
+                    <li><a href="#semesters" class="nav-link">Semesters</a></li>
+                    <li><a href="#books" class="nav-link">Books</a></li>
+                    <li><a href="#notes" class="nav-link">Notes</a></li>
+                    <li><a href="#records" class="nav-link">Records</a></li>
+                    <li><a href="#questions" class="nav-link">Questions</a></li>
+                </ul>
+            </nav>
+            <div class="user-actions">
+                <button class="btn btn-primary" id="uploadBtn">
+                    <i class="fas fa-cloud-upload-alt"></i> Upload
+                </button>
+                <div class="user-profile">
+                    <img src="assets/images/user.jpg" alt="User" id="userAvatar">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Dashboard Section -->
+            <section id="dashboard" class="section active">
+                <div class="section-header">
+                    <h1 class="glitch-text" data-text="Student Dashboard">Student Dashboard</h1>
+                    <p>Welcome to your 8-semester college data management system</p>
+                </div>
+                
+                <!-- Semester Progress -->
+                <div class="semester-progress">
+                    <h2>Semester Progress</h2>
+                    <div class="progress-track">
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 12.5%;"></div>
+                        </div>
+                        <div class="semester-marks">
+                            <div class="semester-mark active" data-semester="1">1</div>
+                            <div class="semester-mark" data-semester="2">2</div>
+                            <div class="semester-mark" data-semester="3">3</div>
+                            <div class="semester-mark" data-semester="4">4</div>
+                            <div class="semester-mark" data-semester="5">5</div>
+                            <div class="semester-mark" data-semester="6">6</div>
+                            <div class="semester-mark" data-semester="7">7</div>
+                            <div class="semester-mark" data-semester="8">8</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>248</h3>
+                            <p>Books Available</p>
+                        </div>
+                        <div class="stat-wave"></div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-sticky-note"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>172</h3>
+                            <p>Notes Uploaded</p>
+                        </div>
+                        <div class="stat-wave"></div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-file-alt"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>89</h3>
+                            <p>Record Manuals</p>
+                        </div>
+                        <div class="stat-wave"></div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-question-circle"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>420</h3>
+                            <p>Previous Year Questions</p>
+                        </div>
+                        <div class="stat-wave"></div>
+                    </div>
+                </div>
+                
+                <div class="dashboard-content">
+                    <div class="recent-uploads">
+                        <h2>Recent Uploads</h2>
+                        <div class="uploads-grid">
+                            <!-- Recent uploads will be populated by JavaScript -->
+                        </div>
+                    </div>
+                    
+                    <div class="quick-access">
+                        <h2>Quick Access</h2>
+                        <div class="quick-grid">
+                            <div class="quick-card" data-target="semesters">
+                                <div class="quick-icon">
+                                    <i class="fas fa-layer-group"></i>
+                                </div>
+                                <h3>Semesters</h3>
+                                <p>Access semester-wise materials</p>
+                            </div>
+                            <div class="quick-card" data-target="books">
+                                <div class="quick-icon">
+                                    <i class="fas fa-book-open"></i>
+                                </div>
+                                <h3>Books Library</h3>
+                                <p>Browse all course books</p>
+                            </div>
+                            <div class="quick-card" data-target="notes">
+                                <div class="quick-icon">
+                                    <i class="fas fa-pencil-alt"></i>
+                                </div>
+                                <h3>Study Notes</h3>
+                                <p>Access shared notes</p>
+                            </div>
+                            <div class="quick-card" data-target="questions">
+                                <div class="quick-icon">
+                                    <i class="fas fa-tasks"></i>
+                                </div>
+                                <h3>PYQs</h3>
+                                <p>Previous year questions</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Semesters Section -->
+            <section id="semesters" class="section">
+                <div class="section-header">
+                    <h1>8 Semester Structure</h1>
+                    <p>Access all your semester-wise study materials</p>
+                </div>
+                
+                <div class="semester-filters">
+                    <button class="filter-btn active" data-semester="all">All Semesters</button>
+                    <button class="filter-btn" data-semester="1">Semester 1</button>
+                    <button class="filter-btn" data-semester="2">Semester 2</button>
+                    <button class="filter-btn" data-semester="3">Semester 3</button>
+                    <button class="filter-btn" data-semester="4">Semester 4</button>
+                    <button class="filter-btn" data-semester="5">Semester 5</button>
+                    <button class="filter-btn" data-semester="6">Semester 6</button>
+                    <button class="filter-btn" data-semester="7">Semester 7</button>
+                    <button class="filter-btn" data-semester="8">Semester 8</button>
+                </div>
+                
+                <div class="semester-grid">
+                    <!-- Semester cards will be populated by JavaScript -->
+                </div>
+            </section>
+
+            <!-- Books Section -->
+            <section id="books" class="section">
+                <div class="section-header">
+                    <h1>Books Library</h1>
+                    <p>Access all your course books and reference materials</p>
+                </div>
+                <div class="content-grid">
+                    <!-- Books will be populated by JavaScript -->
+                </div>
+            </section>
+
+            <!-- Notes Section -->
+            <section id="notes" class="section">
+                <div class="section-header">
+                    <h1>Study Notes</h1>
+                    <p>Upload and access study notes for all subjects</p>
+                </div>
+                <div class="content-grid">
+                    <!-- Notes will be populated by JavaScript -->
+                </div>
+            </section>
+
+            <!-- Records Section -->
+            <section id="records" class="section">
+                <div class="section-header">
+                    <h1>Record Manuals</h1>
+                    <p>Access lab record manuals and practical files</p>
+                </div>
+                <div class="content-grid">
+                    <!-- Records will be populated by JavaScript -->
+                </div>
+            </section>
+
+            <!-- Questions Section -->
+            <section id="questions" class="section">
+                <div class="section-header">
+                    <h1>Previous Year Questions</h1>
+                    <p>Prepare with previous year examination papers</p>
+                </div>
+                <div class="content-grid">
+                    <!-- Questions will be populated by JavaScript -->
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Upload Modal -->
+    <div class="modal" id="uploadModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Upload File</h2>
+                <button class="close-btn" id="closeModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="uploadForm">
+                    <div class="form-group">
+                        <label for="fileSemester">Semester</label>
+                        <select id="fileSemester" required>
+                            <option value="">Select Semester</option>
+                            <option value="1">Semester 1</option>
+                            <option value="2">Semester 2</option>
+                            <option value="3">Semester 3</option>
+                            <option value="4">Semester 4</option>
+                            <option value="5">Semester 5</option>
+                            <option value="6">Semester 6</option>
+                            <option value="7">Semester 7</option>
+                            <option value="8">Semester 8</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="fileType">File Type</label>
+                        <select id="fileType" required>
+                            <option value="">Select file type</option>
+                            <option value="book">Book</option>
+                            <option value="note">Note</option>
+                            <option value="record">Record Manual</option>
+                            <option value="question">Previous Year Question</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="fileName">File Name</label>
+                        <input type="text" id="fileName" placeholder="Enter file name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="fileSubject">Subject</label>
+                        <input type="text" id="fileSubject" placeholder="Enter subject" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="fileDescription">Description</label>
+                        <textarea id="fileDescription" placeholder="Enter file description"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="fileUpload">Select File</label>
+                        <div class="file-upload-area" id="fileUploadArea">
+                            <i class="fas fa-cloud-upload-alt"></i>
+                            <p>Drag & drop files here or click to browse</p>
+                            <input type="file" id="fileUpload" hidden>
+                        </div>
+                    </div>
+                    <div class="form-actions">
+                        <button type="button" class="btn btn-secondary" id="cancelUpload">Cancel</button>
+                        <button type="submit" class="btn btn-primary">Upload</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- File Preview Modal -->
+    <div class="modal" id="previewModal">
+        <div class="modal-content preview-content">
+            <div class="modal-header">
+                <h2 id="previewTitle">File Preview</h2>
+                <button class="close-btn" id="closePreview">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="preview-container">
+                    <div class="preview-info">
+                        <h3 id="previewFileName"></h3>
+                        <p id="previewFileSubject"></p>
+                        <p id="previewFileDescription"></p>
+                        <div class="file-meta">
+                            <span><i class="fas fa-calendar"></i> <span id="previewFileDate"></span></span>
+                            <span><i class="fas fa-layer-group"></i> Semester <span id="previewFileSemester"></span></span>
+                        </div>
+                        <div class="file-actions">
+                            <button class="btn btn-primary" id="downloadBtn">
+                                <i class="fas fa-download"></i> Download
+                            </button>
+                            <button class="btn btn-secondary" id="shareBtn">
+                                <i class="fas fa-share-alt"></i> Share
+                            </button>
+                        </div>
+                    </div>
+                    <div class="preview-view">
+                        <div class="file-placeholder">
+                            <i class="fas fa-file-pdf"></i>
+                            <p>PDF Preview</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Semester Detail Modal -->
+    <div class="modal" id="semesterModal">
+        <div class="modal-content semester-modal-content">
+            <div class="modal-header">
+                <h2 id="semesterModalTitle">Semester Details</h2>
+                <button class="close-btn" id="closeSemesterModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="semester-detail-content">
+                    <!-- Semester details will be populated by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notification -->
+    <div class="notification" id="notification">
+        <div class="notification-content">
+            <i class="fas fa-check-circle"></i>
+            <span id="notificationText">File uploaded successfully!</span>
+        </div>
+    </div>
+<!-- Add this to your index.html for QR code generation -->
+<div class="share-section" style="text-align: center; padding: 20px;">
+    <h3>Scan to Access</h3>
+    <div id="qrcode"></div>
+    <p>Scan this QR code with your phone camera</p>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.3/build/qrcode.min.js"></script>
+<script>
+// Generate QR Code
+function generateQRCode() {
+    const currentUrl = window.location.href;
+    QRCode.toCanvas(document.getElementById('qrcode'), currentUrl, {
+        width: 200,
+        margin: 2
+    }, function (error) {
+        if (error) console.error(error);
+    });
+}
+generateQRCode();
+</script>
+    <script src="js/app.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/file-manager.js"></script>
+    <script src="js/semester-manager.js"></script>
+</body>
+</html>
